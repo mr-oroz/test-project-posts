@@ -16,7 +16,7 @@ const ListItem = (props) => {
       <Row>
         <div className='image'>
           <Link to={`/users/${userId}`}>
-            <Image src={avatar[0].thumbnailUrl} />
+            <Image style={{width: 150}} src={avatar[0].thumbnailUrl} />
           </Link>
         </div>
         <div className='texts'>
