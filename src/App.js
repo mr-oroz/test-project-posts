@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import Header from './components/header';
+import { Container } from 'react-bootstrap';
+import { Routes, Route } from 'react-router';
+import Home from './pages/home';
+import UserDetail from './pages/userDestail';
 import './App.css';
+import BothMe from './pages/bothMe';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='header'>
+      <Header/>
+      <Container>
+        <Routes>
+          <Route path='/' exact element={<Home/>}/>
+          <Route path='/both-me' exact element={<BothMe/>}/>
+          <Route path='/users/:userId' exact element={<UserDetail/>}/>
+        </Routes>
+      </Container>
     </div>
   );
-}
+};
 
 export default App;
